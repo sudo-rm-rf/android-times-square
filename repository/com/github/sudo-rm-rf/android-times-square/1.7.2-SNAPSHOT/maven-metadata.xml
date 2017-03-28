@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.github.sudo-rm-rf</groupId>
+  <artifactId>android-times-square</artifactId>
+  <version>1.7.2-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170328.100110</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20170328100110</lastUpdated>
+  </versioning>
+</metadata>
