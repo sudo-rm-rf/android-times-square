@@ -24,16 +24,16 @@ public class MonthView extends LinearLayout {
 
   public static MonthView create(ViewGroup parent, LayoutInflater inflater,
       DateFormat weekdayNameFormat, Listener listener, Calendar today, int dividerColor,
-      int dayBackgroundResId, int dayTextColorResId, int titleTextColor, boolean displayHeader,
+      int dayBackgroundResId, int dayTextColorResId, int titleTextColor, boolean displayHeader, boolean displayTitle,
       int headerTextColor, Locale locale, DayViewAdapter adapter) {
     return create(parent, inflater, weekdayNameFormat, listener, today, dividerColor,
-        dayBackgroundResId, dayTextColorResId, titleTextColor, displayHeader, headerTextColor, null,
+        dayBackgroundResId, dayTextColorResId, titleTextColor, displayHeader, displayTitle, headerTextColor, null,
         locale, adapter);
   }
 
   public static MonthView create(ViewGroup parent, LayoutInflater inflater,
       DateFormat weekdayNameFormat, Listener listener, Calendar today, int dividerColor,
-      int dayBackgroundResId, int dayTextColorResId, int titleTextColor, boolean displayHeader,
+      int dayBackgroundResId, int dayTextColorResId, int titleTextColor, boolean displayHeader, boolean displayTitle,
       int headerTextColor, List<CalendarCellDecorator> decorators, Locale locale,
       DayViewAdapter adapter) {
     final MonthView view = (MonthView) inflater.inflate(R.layout.month, parent, false);
@@ -42,6 +42,7 @@ public class MonthView extends LinearLayout {
     view.setDayTextColor(dayTextColorResId);
     view.setTitleTextColor(titleTextColor);
     view.setDisplayHeader(displayHeader);
+    view.setDisplayTitle(displayTitle);
     view.setHeaderTextColor(headerTextColor);
 
     if (dayBackgroundResId != 0) {
@@ -175,6 +176,10 @@ public class MonthView extends LinearLayout {
 
   public void setDisplayHeader(boolean displayHeader) {
     grid.setDisplayHeader(displayHeader);
+  }
+
+  public void setDisplayTitle(boolean displayTitle) {
+    title.setVisibility(displayTitle ? VISIBLE : GONE);
   }
 
   public void setHeaderTextColor(int color) {
